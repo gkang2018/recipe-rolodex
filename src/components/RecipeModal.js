@@ -67,6 +67,15 @@ export default function RecipeModal({ open, onClose, fetchRecipes }) {
         source: recipe.source, // Save the source link to Firestore
       });
       console.log('New Recipe Submitted:', recipe);
+      // Reset the form fields after successful submission
+      setRecipe({
+        name: '',
+        ingredients: '',
+        instructions: '',
+        tags: [],
+        currentTag: '',
+        source: '',
+      });
       fetchRecipes(); // Refresh the recipe list in the parent component
       onClose(); // Close the modal after submitting
     } catch (error) {
