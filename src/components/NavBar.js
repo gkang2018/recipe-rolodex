@@ -43,18 +43,37 @@ const NavBar = ({ fetchRecipes }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <StyledAppBar position="sticky">
-      <Toolbar sx={{ justifyContent: 'space-between', paddingRight: '24px' }}>
-        <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
-          Maansi's Recipe Rolodex
-        </Typography>
-        <AddRecipeButton
-          startIcon={<AddIcon />}
-          onClick={handleOpenModal}
-          sx={{ marginRight: '16px' }} // Space from the edge
+        <Toolbar
+          sx={{
+            justifyContent: { xs: 'center', sm: 'space-between' }, // Center items on small screens
+            flexDirection: { xs: 'column', sm: 'row' }, // Stack items on small screens
+            alignItems: 'center',
+            padding: { xs: '8px', sm: '16px' },
+          }}
         >
-          Add Recipe
-        </AddRecipeButton>
-      </Toolbar>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 'bold',
+              fontSize: { xs: '18px', sm: '24px' }, // Smaller font size for mobile
+              textAlign: { xs: 'center', sm: 'left' }, // Center text on small screens
+              marginBottom: { xs: '8px', sm: '0' }, // Add space on small screens
+            }}
+          >
+            Maansi's Recipe Rolodex
+          </Typography>
+          <AddRecipeButton
+            startIcon={<AddIcon />}
+            onClick={handleOpenModal}
+            sx={{
+              marginRight: { xs: '0', sm: '16px' }, // Remove margin on mobile
+              padding: { xs: '6px 12px', sm: '8px 16px' }, // Smaller padding on mobile
+              fontSize: { xs: '12px', sm: '14px' }, // Smaller font size on mobile
+            }}
+          >
+            Add Recipe
+          </AddRecipeButton>
+        </Toolbar>
       </StyledAppBar>
 
       {/* Pass the fetchRecipes function to the RecipeModal */}
