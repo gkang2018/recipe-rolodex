@@ -1,0 +1,7 @@
+{
+    "recipes": 
+    [
+        {"name": "Vodka Pasta", "ingredients": ["Tomato Paste", "Vodka", "Farfalle"], "instructions": ["Sucks Paste", "Vodka", "Farfalle"], "tags": [], "id": 0},
+        {"name": "Chickpea Wraps", "ingredients": ["Chickpeas", ""], "instructions": ["Tomato Paste", "Vodka", "Farfalle"], "tags": [], "id": 1}
+    ]
+}
